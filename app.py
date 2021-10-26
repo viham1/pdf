@@ -14,7 +14,7 @@ def generate_pdf():
     config = pdfkit.configuration(wkhtmltopdf=bytes('/usr/bin/wkhtmltopdf', 'utf-8'))
 
     with Display():
-      pdf_file = pdfkit.from_string(dataJSON['html'], False, css=dataJSON['css'],configuration=config, options=dataJSON['options'])
+      pdf_file = pdfkit.from_string(dataJSON['html'], False,configuration=config, options=dataJSON['options'])
     
     return(pdf_file)
 
