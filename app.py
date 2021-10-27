@@ -10,6 +10,12 @@ def generate_pdf():
     if request.method == "POST":
         dataJSON = request.get_json()
 
+    for key,value in dataJSON['options'].items():
+      if value == "None":
+        dataJSON['options'][key] = None
+     
+    print(dataJSON['options'])
+
     #Configuration of the binary path
     config = pdfkit.configuration(wkhtmltopdf=bytes('/usr/bin/wkhtmltopdf', 'utf-8'))
 
