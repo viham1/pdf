@@ -8,7 +8,9 @@ app = Flask(__name__)
 def generate_pdf():
     #Handle request coming in
     if request.method == "POST":
+        print(request)
         dataJSON = request.get_json()
+        print(dataJSON)
 
     for key,value in dataJSON['options'].items():
       if value == "None":
